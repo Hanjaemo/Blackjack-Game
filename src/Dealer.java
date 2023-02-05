@@ -1,0 +1,2 @@
+class Dealer extends Participant{
+}
