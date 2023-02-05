@@ -1,6 +1,4 @@
-abstract class Participant implements IParticipant {
-
-    @Override
+public abstract class Participant {
     public Card getCard() {
         Deck deck = new Deck();
 
