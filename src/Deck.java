@@ -1,9 +1,9 @@
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Collections;
 
 class Deck {
     private final int CARD_NUM = 52;
-    ArrayList<Card> cards = new ArrayList<>(CARD_NUM);
+    private ArrayList<Card> cards = new ArrayList<>(CARD_NUM);
 
     Deck() {
         for (int i=0; i<4; i++) {
@@ -15,5 +15,17 @@ class Deck {
             cards.add(new Card("Q"));
             cards.add(new Card("K"));
         }
+    }
+
+    public ArrayList<Card> getCards() {
+        return cards;
+    }
+
+    public void shuffle() {
+        Collections.shuffle(getCards());
+    }
+
+    public Card getCard() {
+        return getCards().get(0);
     }
 }
