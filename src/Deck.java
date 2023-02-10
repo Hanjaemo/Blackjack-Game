@@ -1,9 +1,8 @@
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 class Deck {
     private final int CARD_NUM = 52;
-    private ArrayList<Card> cards = new ArrayList<>(CARD_NUM);
+    private Queue<Card> cards = new LinkedList<>();
 
     Deck() {
         for (int i=0; i<4; i++) {
@@ -17,15 +16,16 @@ class Deck {
         }
     }
 
-    public ArrayList<Card> getCards() {
+    public Queue<Card> getCards() {
         return cards;
     }
 
+
     public void shuffle() {
-        Collections.shuffle(getCards());
+        Collections.shuffle((List<Card>) getCards());
     }
 
     public Card getCard() {
-        return getCards().get(0);
+        return getCards().poll();
     }
 }
